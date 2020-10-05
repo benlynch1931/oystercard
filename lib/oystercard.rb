@@ -9,7 +9,7 @@ class Oystercard
   def top_up(amount = 0)
     # (amount = 0) means instead of raising an error, ruby with assume that the
     # argument 'amount' is equal to 0
-    fail 'error add this excedes card limit of 90$' if amount + @balance >= CARD_LIMIT
+    fail "Error: Top-up will exceed card limit of £#{CARD_LIMIT}" if amount + @balance >= CARD_LIMIT
     @balance += amount
   end
 

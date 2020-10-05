@@ -21,7 +21,7 @@ describe Oystercard do
     end
 
     it 'it raises error if balance exceeds 90' do
-      expect{subject.top_up(95)}.to raise_error 'error add this excedes card limit of 90$'
+      expect{subject.top_up(95)}.to raise_error "Error: Top-up will exceed card limit of £#{Oystercard::CARD_LIMIT}"
     end
   end
 
