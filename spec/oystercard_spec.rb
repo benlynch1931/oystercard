@@ -25,6 +25,20 @@ describe Oystercard do
     end
   end
 
+  describe '#deduct' do
+
+
+
+    it { is_expected.to respond_to(:deduct).with(1).argument }
+
+    it 'deducts given amount from balance' do
+
+      subject.top_up(30)
+      subject.deduct(20)
+      expect(subject.balance).to eq 10
+    end
+  end
+
 end
 
 # In order to use public transport
